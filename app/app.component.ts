@@ -6,13 +6,12 @@ import {Component} from '@angular/core'
   styleUrls: ["app.component.scss"],
   // back ticks are es6 feature to serve as multi line strings
   // assigning a template to particular component
-  template: `
-  <div class="app">
-    <!--this is called interpolation-->
-    {{title}}
-  </div>
-  `
-})
+  templateUrl: './app.component.html'
+/*   template: `
+    <div class="app">
+      {{title}}
+    </div>`
+ */})
 /**
  * Component decorator gets bound to this app component
  * All of the properties exposed here will be available in template
