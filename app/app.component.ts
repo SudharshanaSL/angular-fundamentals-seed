@@ -8,9 +8,22 @@ import {Component} from '@angular/core'
   // assigning a template to particular component
   // templateUrl: './app.component.html'
   template: `
-    <div class="app">
-      {{title}}
-    </div>`
+      <div class="app">
+        <!--
+            This is called an expression.
+            Expression below, involves interpolation. 
+            Interpolation here refers to usage of curly braces which bind properties to templates
+        -->
+        {{title + isHappy + '!'}}
+      </div>
+      <div>
+        <!-- Since these are values inside expression of a component, we can perform operations -->
+        {{numberOne + numberTwo}}
+      </div>
+      <div>
+        {{isHappy? ':)':':('}}
+      </div>
+    `
 })
 /**
  * Component decorator gets bound to this app component
@@ -18,6 +31,9 @@ import {Component} from '@angular/core'
  */
 export class AppComponent {
   title: string;
+  isHappy: boolean = false;
+  numberOne: number = 1;
+  numberTwo: number = 2;
   constructor() {
     this.title  = "Sudharshana";
   }
