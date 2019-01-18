@@ -1,0 +1,7 @@
+https://www.c-sharpcorner.com/article/angular-one-and-two-way-data-bindings-with-examples/
+
+https://blog.kevinchisholm.com/angular/parent-child-communication-input/
+
+https://blog.kevinchisholm.com/angular/child-parent-communication-viewchild/
+
+https://blog.kevinchisholm.com/angular/child-parent-communication-output/
