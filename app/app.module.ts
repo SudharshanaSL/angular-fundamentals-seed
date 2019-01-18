@@ -8,7 +8,6 @@
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { CommonModule } from '@angular/common'
-import { FormsModule } from '@angular/forms'
 
 import { AppComponent } from './app.component'
 import {DataBindingComponent} from './app.databinding.component'
@@ -17,13 +16,11 @@ import {DataBindingComponent} from './app.databinding.component'
   // to actually register this app component in the module,
   // we need to create something called declarations
   declarations: [
-    AppComponent,
-    DataBindingComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    CommonModule,
-    FormsModule
+    CommonModule
   ],
   // root module is the only module that contains bootstrap property
   // module bootstraps component into index.html

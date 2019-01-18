@@ -5,6 +5,11 @@
 
 import {Component} from '@angular/core'
 
+/** 
+ * Please import the following module in app.module.ts to use this component
+ * import {FormsModule} from '@angular/forms'
+*/
+
 @Component({
   // creates html element for the component
   selector: "data-binding",

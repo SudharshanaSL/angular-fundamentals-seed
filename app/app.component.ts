@@ -11,14 +11,14 @@ import {Component} from '@angular/core'
   styleUrls: ["app.component.scss"],
   template: ` <!-- Also referred as View -->
       <div class="app">
+        <button
+          (click)="handleClick(templateReference.value)">
+          Get value
+        </button>
         <input type="text" 
-            [(ngModel)]="nameNgModel">
-        <div> 
-          {{ nameNgModel }}
-        </div>
+            #templateReference>
       </div>
       <hr>
-      <data-binding></data-binding>
     `
 })
 /**
@@ -26,5 +26,7 @@ import {Component} from '@angular/core'
  * All of the properties exposed here will be available in template
  */
 export class AppComponent {
-  nameNgModel: string = "ngModel binding"
+  handleClick(value: string) {
+    console.log(value)
+  }
 }
