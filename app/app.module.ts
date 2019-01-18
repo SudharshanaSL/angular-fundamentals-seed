@@ -1,3 +1,8 @@
+/**
+ * A module is main building block of the application.
+ * Every module contains components, routes, services and more.
+ */
+
 // all our dependent modules should be mentioned here
 
 import { NgModule } from '@angular/core'
