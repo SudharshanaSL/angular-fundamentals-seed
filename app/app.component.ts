@@ -46,6 +46,31 @@ interface Passenger {
             {{i}} : {{passenger.name}}
           </li>
         </ul>
+        <hr>
+        <ul>
+          <h2>style</h2>
+          <li *ngFor="let passenger of passengers; let i = index">
+            <span
+              class="status"
+              [ngStyle]="{ 
+                backgroundColor: (passenger.checkedIn ? 'green':'#c0392b')}">
+              </span>
+              element.style.background = 'red'
+            {{i}} : {{passenger.name}}
+          </li>
+        </ul>
+        <hr>
+        <ul>
+          <h2>ngStyle</h2>
+          <li *ngFor="let passenger of passengers; let i = index">
+            <span
+              class="status"
+              [style.backgroundColor]="(passenger.checkedIn ? 'green':'#c0392b')">
+              </span>
+              element.style.background = 'red'
+            {{i}} : {{passenger.name}}
+          </li>
+        </ul>
       </div>
     `
 })
