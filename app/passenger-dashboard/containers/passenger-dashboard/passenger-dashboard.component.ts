@@ -8,27 +8,16 @@ import {Passenger} from '../../models/passenger.interface';
     styleUrls: ['passenger-dashboard.component.scss'],
     template:`
     <div>
-        <h3>Airline Passengers</h3>
-        <ul>
-          <h2>structural ngFor</h2>
-          <li *ngFor="let passenger of passengers; let i = index">
-            <span
-              class="status"
-              [class.checked-in]="passenger.checkedIn"></span>
-            {{i}} : {{passenger.name}}
-            <!--we tell angular that we need the json pipe with passenger being input-->
-            <p>{{passenger | json}}</p>
-            <div class="date">
-              <!--pipe will not output anything if value is null-->
-              Checked in date: 
-              {{passenger.checkedIn? (passenger.optionalCheckedInDate | date: 'dd-MMM-yyyy-GG' | uppercase): 'Not checked in'}}
-            </div>
-            <div class="children">
-              Children: {{passenger.children?.length || 0}}
-            </div>
-          </li>
-        </ul>
-        <hr>
+      <hr>
+      <h3>Airline Passengers Dashboard</h3>
+      <hr>
+      <passenger-count
+          [items]="passengers">
+        </passenger-count>
+        <passenger-detail 
+          *ngFor="let passenger of passengers"
+          [detail]="passenger">
+        </passenger-detail>
     </div>
     `
 })
