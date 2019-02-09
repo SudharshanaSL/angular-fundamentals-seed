@@ -31,3 +31,5 @@ data flow is top to bottom
 
 Definitions of styles of each component are customized by angular to avoid interference with styles on same items in other components.
 This is called view encapsulation
+
+ngOnInit life cycle hook is the event when component is initialized
