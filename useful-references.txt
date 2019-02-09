@@ -28,3 +28,6 @@ Change should be emitted with the use of events
 
 event flow is bottom to top
 data flow is top to bottom
+
+Definitions of styles of each component are customized by angular to avoid interference with styles on same items in other components.
+This is called view encapsulation
