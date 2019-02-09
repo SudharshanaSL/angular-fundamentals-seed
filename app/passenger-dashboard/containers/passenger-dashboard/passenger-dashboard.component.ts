@@ -16,7 +16,9 @@ import {Passenger} from '../../models/passenger.interface';
         </passenger-count>
         <passenger-detail 
           *ngFor="let passenger of passengers"
-          [detail]="passenger">
+          [detail]="passenger"
+          (edit)="handleEdit($event)"
+          (remove)="handleRemoval($event)">
         </passenger-detail>
     </div>
     `
@@ -73,5 +75,11 @@ export class PassengerDashboardComponent implements OnInit {
           age: 3
         }]
       }]
+    }
+    handleEdit(event) {
+      console.log(event)
+    }
+    handleRemoval(event) {
+      console.log(event);
     }
 }
