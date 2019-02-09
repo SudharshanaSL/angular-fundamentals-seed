@@ -21,43 +21,30 @@ interface Passenger {
           type="text"
           [value]="name"
           (input)="handleChange($event.target.value)">
-        <hr>
-        if you use web components, ngIf can be used as a property binding as ngIf is a property of the declared template below
-        <template [ngIf]="name.length >= 3">
-          <div>
-            Searching for... {{name}}
-          </div>
-        </template>
-        <hr>
-        <!--ngIf is a structural directive-->
-        * before ngIf is nothing but sugar syntax for not declaring a template
-        <div *ngIf="name.length >= 3">
-          Searching for... {{name}}
-        </div>
-        <hr>
         <h1>ngFor</h1>
         <h3>Airline Passengers</h3>
         <ul>
           <h2>structural ngFor</h2>
           <li *ngFor="let passenger of passengers; let i = index">
-            <hr>
-            {{i}} :
-            {{passenger.id}},
-            {{passenger.name}},
-            {{passenger.checkedIn}}
+            <span
+              class="status"
+              [class.checked-in]="passenger.checkedIn"></span>
+            {{i}} : {{passenger.name}}
           </li>
         </ul>
         <hr>
         <ul>
-          <h2>web components offer data encapsulation</h2>
-          <template ngFor let-passenger let-i="index" [ngForOf]="passengers">
-            <li>
-              <hr>
-              {{i+1}} :
-              {{passenger.name}},
-              {{passenger.checkedIn}}
-            </li>
-          </template>
+          <h2>structural ngFor</h2>
+          <li *ngFor="let passenger of passengers; let i = index">
+            <span
+              class="status"
+              [ngClass]="{ 
+                'checked-in': passenger.checkedIn,
+                'cancelled' : passenger.checkedIn == undefined,
+                'did-not-book': passenger.id == undefined }">
+              </span>
+            {{i}} : {{passenger.name}}
+          </li>
         </ul>
       </div>
     `
@@ -81,15 +68,15 @@ export class AppComponent {
     checkedIn: true
   }, {
     id:3,
-    name: this.name+2,
+    name: this.name+3,
     checkedIn: false
   }, {
-    id:4,
-    name: this.name+2,
+    id:undefined,
+    name: this.name+4,
     checkedIn: false
   }, {
     id:5,
-    name: this.name+2,
-    checkedIn: true
+    name: this.name+5,
+    checkedIn: undefined
   }]
 }
