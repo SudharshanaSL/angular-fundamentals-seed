@@ -8,6 +8,7 @@
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { CommonModule } from '@angular/common'
+import { PassengerDashboardModule } from './passenger-dashboard/passenger-dashboard.module';
 
 import { AppComponent } from './app.component'
 import {DataBindingComponent} from './app.databinding.component'
@@ -19,8 +20,11 @@ import {DataBindingComponent} from './app.databinding.component'
     AppComponent
   ],
   imports: [
+    // angular modules
     BrowserModule,
-    CommonModule
+    CommonModule,
+    // app modules
+    PassengerDashboardModule
   ],
   // root module is the only module that contains bootstrap property
   // module bootstraps component into index.html

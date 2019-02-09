@@ -17,3 +17,14 @@ https://stackoverflow.com/questions/7087331/what-is-the-meaning-of-polyfills-in-
 https://www.webcomponents.org/introduction
 
 https://stackoverflow.com/questions/39162911/angular-2-what-differences-between-comparison-operators-and-in-ngif-dire
+
+Smart/Container component communicate with services and render child components or pass data to child components
+Dumb/Presentational component accept data via inputs and emit data changes via event outputs
+
+
+One way dataflow:
+container -> child components, child component changes, how does the container come to know of the change?
+Change should be emitted with the use of events
+
+event flow is bottom to top
+data flow is top to bottom
