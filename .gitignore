@@ -30,3 +30,10 @@ npm-debug.log
 vendor/vendor.js
 vendor/vendor.map
 vendor/vendor-manifest.json
+main.js
+main.js.map
+yarn.lock
+app/app.component.js
+app/app.component.js.map
+app/app.module.js
+app/app.module.js.map
