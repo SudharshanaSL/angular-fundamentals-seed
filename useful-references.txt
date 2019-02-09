@@ -5,3 +5,13 @@ https://blog.kevinchisholm.com/angular/parent-child-communication-input/
 https://blog.kevinchisholm.com/angular/child-parent-communication-viewchild/
 
 https://blog.kevinchisholm.com/angular/child-parent-communication-output/
+
+The context for terms in an expression is a blend of the template variables, the directive's context object (if it has one), and the component's members. If you reference a name that belongs to more than one of these namespaces, the template variable name takes precedence, followed by a name in the directive's context, and, lastly, the component's member names.
+
+https://stackoverflow.com/questions/35875595/what-is-the-difference-between-target-and-bind-target-in-angular2-template-synta
+
+https://stackoverflow.com/questions/42294827/webpack-vs-webpack-dev-server-vs-webpack-dev-middleware-vs-webpack-hot-middlewar
+
+https://stackoverflow.com/questions/7087331/what-is-the-meaning-of-polyfills-in-html5
+
+https://www.webcomponents.org/introduction

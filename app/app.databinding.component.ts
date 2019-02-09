@@ -70,7 +70,7 @@ import {Component} from '@angular/core'
         <div> 
           {{ nameNgModel }} - Example of usage of ngModel
           <h1>
-            Here we listent to an event inside of a property binding.
+            Here we listen to an event inside of a property binding.
             This is called two way data binding syntax.
             The event that is fired is similar to that of handleChange.
           </h1>
