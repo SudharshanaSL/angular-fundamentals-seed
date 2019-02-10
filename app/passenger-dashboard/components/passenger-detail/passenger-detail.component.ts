@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnChanges, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Passenger } from '../../models/passenger.interface';
 
 // This is a stateless component
@@ -42,7 +42,7 @@ import { Passenger } from '../../models/passenger.interface';
     `
 })
 
-export class PassengerDetailComponent {
+export class PassengerDetailComponent implements OnChanges, OnInit{
     @Input()
     detail: Passenger;
     editing: boolean = false;
@@ -56,12 +56,27 @@ export class PassengerDetailComponent {
 
     constructor() { }
 
+    ngOnChanges(changes) {
+        // this gets called before ngOnInit
+        if(changes.detail) {
+            this.detail = Object.assign({}, changes.detail.currentValue)
+        }
+        console.log("ngOnChanges")
+    }
+
+    ngOnInit() {
+        console.log("ngOnInit")
+    }
+
     onNameChange(value: string) {
-        console.log("Value:\t", value);
+        // this gets called before toggleEdit
+        console.log("Name change")
         this.detail.name = value;
     }
 
     toggleEdit() {
+        // this gets called before ngOnChanges
+        console.log("toggling Edit mode")
         if(this.editing)
             this.edit.emit(this.detail);
         this.editing = !this.editing;
