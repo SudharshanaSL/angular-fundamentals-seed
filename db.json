@@ -1,1 +1,47 @@
-{}
+{
+    "passengers": [{
+        "id": 1,
+        "name": 1,
+        "checkedIn": false,
+        "mandatoryCheckedInDate": 1490742111111,
+        "optionalCheckedInDate": 1490742111111,
+        "children": null
+    }, {
+        "id": 2,
+        "name": 2,
+        "checkedIn": true,
+        "mandatoryCheckedInDate": null,
+        "children": [{
+            "name": "abcd",
+            "age": 12
+        }, {
+            "name": "efgh",
+            "age": 3
+        }]
+    }, {
+        "id": 3,
+        "name": 3,
+        "checkedIn": true,
+        "mandatoryCheckedInDate": 1490742000004,
+        "optionalCheckedInDate": 1490742000004,
+        "children": null
+    }, {
+        "id": 4,
+        "name": 4,
+        "checkedIn": false,
+        "mandatoryCheckedInDate": null,
+        "children": null
+    }, {
+        "id": 5,
+        "name": 5,
+        "checkedIn": true,
+        "mandatoryCheckedInDate": null,
+        "children": [{
+            "name": "abcd",
+            "age": 12
+        }, {
+            "name": "efgh",
+            "age": 3
+        }]
+    }]
+}
