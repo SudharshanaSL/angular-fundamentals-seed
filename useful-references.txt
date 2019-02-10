@@ -33,3 +33,6 @@ Definitions of styles of each component are customized by angular to avoid inter
 This is called view encapsulation
 
 ngOnInit life cycle hook is the event when component is initialized
+
+Each interface has a single hook method whose name is the interface name prefixed with ng. For example, the OnInit interface has a hook method named ngOnInit() that Angular calls shortly after creating the component
+

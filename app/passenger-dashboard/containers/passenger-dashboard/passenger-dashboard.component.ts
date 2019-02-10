@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 
-import {Passenger} from '../../models/passenger.interface';
+import { PassengerDashboardService } from '../../passenger-dashboard.service';
 
+import {Passenger} from '../../models/passenger.interface';
 
 @Component({
     selector: "passenger-dashboard",
@@ -28,67 +29,24 @@ import {Passenger} from '../../models/passenger.interface';
 })
 
 export class PassengerDashboardComponent implements OnInit {
-    name: string = "pass";
-    passengers: Passenger[];
-    constructor() {}
-    ngOnInit() {
-      console.log("Initializing passenger dashboard component with ngOnInit");
-      this.passengers = [{
-        id: 1,
-        name: this.name+1,
-        checkedIn: false,
-        mandatoryCheckedInDate: 1490742111111,
-        optionalCheckedInDate: 1490742111111,
-        children: null
-      }, {
-        id:2,
-        name: this.name+2,
-        checkedIn: true,
-        mandatoryCheckedInDate: null,
-        children: [{
-          name: "abcd",
-          age: 12
-        }, {
-          name: "efgh",
-          age: 3
-        }]
-      }, {
-        id:3,
-        name: this.name+3,
-        checkedIn: true,
-        mandatoryCheckedInDate: 1490742000004,
-        optionalCheckedInDate: 1490742000004,
-        children: null
-      }, {
-        id:undefined,
-        name: this.name+4,
-        checkedIn: false,
-        mandatoryCheckedInDate: null,
-        children: null
-      }, {
-        id:5,
-        name: this.name+5,
-        checkedIn: undefined,
-        mandatoryCheckedInDate: null,
-        children: [{
-          name: "abcd",
-          age: 12
-        }, {
-          name: "efgh",
-          age: 3
-        }]
-      }]
-    }
-    handleEdit(event: Passenger) {
-      this.passengers = this.passengers.map((passenger: Passenger) => {
-        if(passenger.id === event.id)
-          passenger = Object.assign({}, passenger, event);
-        return passenger;
-      })
-    }
-    handleRemoval(event: Passenger) {
-      this.passengers = this.passengers.filter((passenger: Passenger) => {
-        return passenger.id !== event.id
-      })
-    }
+  name: string = "pass";
+  passengers: Passenger[];
+  constructor(private passengerService: PassengerDashboardService) {
+  }
+  ngOnInit() {
+    console.log("Initializing passenger dashboard component with ngOnInit");
+    this.passengers = this.passengerService.getPassengers()
+  }
+  handleEdit(event: Passenger) {
+    this.passengers = this.passengers.map((passenger: Passenger) => {
+      if (passenger.id === event.id)
+        passenger = Object.assign({}, passenger, event);
+      return passenger;
+    })
+  }
+  handleRemoval(event: Passenger) {
+    this.passengers = this.passengers.filter((passenger: Passenger) => {
+      return passenger.id !== event.id
+    })
+  }
 }
