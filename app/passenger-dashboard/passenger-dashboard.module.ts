@@ -1,9 +1,10 @@
-import {NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 // directives are present in common module
-import {CommonModule} from '@angular/common';
+import { CommonModule } from '@angular/common';
+import { HttpModule } from '@angular/http';
 
 // containers
-import {PassengerDashboardComponent} from './containers/passenger-dashboard/passenger-dashboard.component';
+import { PassengerDashboardComponent } from './containers/passenger-dashboard/passenger-dashboard.component';
 
 // components
 import { PassengerCountComponent } from './components/passenger-count/passenger-count.component';
@@ -19,7 +20,8 @@ import { PassengerDashboardService } from './passenger-dashboard.service'
         PassengerDetailComponent
     ],
     imports: [
-        CommonModule
+        CommonModule,
+        HttpModule
     ],
     exports: [
         PassengerDashboardComponent
